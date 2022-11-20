@@ -1,11 +1,13 @@
 {
+  "engines": {"node":"16.13.0"},
   "name": "practice-02-notas",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node app.js"
+    "run": "node app.js",
+    "start":"node app.js"
   },
   "keywords": [],
   "author": "Deivis Torres Mena",
