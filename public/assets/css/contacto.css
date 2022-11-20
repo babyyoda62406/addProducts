@@ -1,0 +1,6 @@
+#hero {
+    width: 100%;
+    height: 600px !important;
+    background: url("../img/0.jpg") top right;
+    background-size: cover;
+  }

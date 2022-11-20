@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://gmpg.org/xfn/11" rel="profile" />
+    <meta name="theme-color" content="#f6131d">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <title>Agregar Productos</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/nosotros.css">
+    <link rel="stylesheet" href="assets/css/contacto.css">
+
+</head>
+
+<body>
+
+
+    <div class="container border my-5 py-2 rounded">
+        <div class="row">
+            <form class=" border-bottom pb-3">
+
+                <div class="col-12 d-flex my-3">
+                    <label for="" class="  col-2" style="align-items: center; font-size: 25px">MENU</label>
+                    <input type="text" name="menu" id="ipMenu" class="col-8 " placeholder="" aria-describedby="helpId">
+                    <a id="btnAddMenu" class="col-2 mx-2 btn btn-outline-success" href="#" role="button">Agregar</a>
+                </div>
+                <div class="col-12 d-flex">
+                    <label for="" class="  col-2" style="align-items: center; font-size: 25px">URL</label>
+                    <input type="text" name="url" id="ipUrl" class="col-8 " placeholder="" aria-describedby="helpId">
+                    <a name="" id="btAddAll" class="col-2 mx-2 btn btn-outline-success" href="#"
+                        role="button">Agregar</a>
+                </div>
+            </form>
+        </div>
+        <div class=" d-flex mt-3">
+            <div class=" col-12" id="screen">
+                <div class="row border-bottom text-center mx-2 text-uppercase">
+                    Esperando...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCargando" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered  modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">Cargando...</h5>
+                </div>
+                <div class="modal-body ">
+
+                    <div class="gearbox">
+                        <div class="overlay"></div>
+                        <div class="gear one">
+                            <div class="gear-inner">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                        <div class="gear two">
+                            <div class="gear-inner">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                        <div class="gear three">
+                            <div class="gear-inner">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                        <div class="gear four large">
+                            <div class="gear-inner">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <span class="text-warning text-sm">Esta ventana se cerrará automaticamente cuando el proceso en
+                        curso termine</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- ======= Footer ======= -->
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="src/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="src/index.js"></script>
+    <script type="text/javascript">
+        load_events()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "practice-02-notas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node app.js"
+  },
+  "keywords": [],
+  "author": "Deivis Torres Mena",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-validator": "^6.14.1",
+    "jsdom": "^20.0.2",
+    "mariadb": "^3.0.0",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^2.6.7",
+    "sequelize": "^6.20.1",
+    "uuid": "^8.3.2"
+  }
+}
