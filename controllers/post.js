@@ -112,13 +112,13 @@ const addProduct =async  (arg)=> {
     
 }
 
-const domlv1 = async (arg)=>{
+const domlv1 = async (arg , ph , ct)=>{
     let cont  = 0 
     const dom   = new JSDOM(arg)
     const items = dom.window.document.getElementsByClassName('product-image')
     const id  = dom.window.document.getElementsByClassName('product-image')
     for(let i = 0;i<items.length;i++){
-        const state  = await domlv2(items[i].href)
+        const state  = await domlv2(items[i].href , ph , ct)
         if(state)cont++
     }
     // domlv2(items[0].href)
@@ -126,12 +126,12 @@ const domlv1 = async (arg)=>{
     return cont
 }
 
-const domlv2 = async (arg)=>{ 
+const domlv2 = async (arg, ph , ct )=>{ 
     let value = false 
     await  fetch(arg)
     .then(async res =>  await res.text())
     .then(async arg=> { 
-      value  =   await domlv3(arg)
+      value  =   await domlv3(arg, ph , ct)
       return value 
     })
     .catch(err => {
@@ -145,7 +145,7 @@ const domlv2 = async (arg)=>{
 }
 
 
-const domlv3 = async (arg)=>{
+const domlv3 = async (arg , ph , ct )=>{
     const frame = JSDOM.fragment(arg)
     carga_productos.id   = frame.querySelector('.clave-sku p').textContent
     carga_productos.ipResen =  carga_productos.ipName = (frame.querySelector(".product-name span.h1").textContent?frame.querySelector(".product-name span.h1").textContent:"UnKnow")
@@ -191,8 +191,8 @@ const domlv3 = async (arg)=>{
     }
     carga_productos.ipEspc     = tempStr
     carga_productos.ipFile     = (frame.querySelector('#image-main').src?frame.querySelector('#image-main').src:"")
-    carga_productos.ipCategory =  ipCategory
-    carga_productos.ipPH       = ipPH
+    carga_productos.ipCategory =  ct
+    carga_productos.ipPH       =  ph
 
     // console.log(carga_productos)
     const  value =  await addProduct(carga_productos)
@@ -205,10 +205,12 @@ const addAll = (req = request , res = response)=>{
     if(!ipPH || !ipCategory){
         return res.status(200).json({"status":"400" , "msg":"Necesita proporcionar el punto de montaje"})
     }
+    let currentPH = ipPH
+    let currentCategory = ipCategory
     fetch(url)
     .then(res => res.text())
     .then(async arg=> { 
-        const trash =  await domlv1(arg)   
+        const trash =  await domlv1(arg , currentPH , currentCategory)   
         // console.log(trash)     
         res.status(200).json({"status":"200" , msg: "success" , items:trash})
     })
