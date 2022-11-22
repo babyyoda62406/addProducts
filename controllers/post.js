@@ -85,11 +85,15 @@ const addProduct =async  (arg)=> {
         const {status}  = arg 
         
         if(status=='200'){
-            const { route,name,src,description,esp} = arg 
+            const { route,name,description,esp} = arg 
+            let {src} = arg
+            if(src.indexOf("http")!==0){
+                src = '../upload/article/' + src
+            }
             independence_item.nombre_producto = name
             independence_item.description = description
             independence_item.especificaciones = getEspc(esp)
-            independence_item.urlImg = `../upload/article/${src}`
+            independence_item.urlImg = `${src}`
             independence_item.route =  route 
            await  fetch(process.env.INDEPENDENCE, {
                 method: "POST" , 
