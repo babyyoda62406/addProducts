@@ -162,7 +162,32 @@ const domlv3 = async (arg)=>{
 
     tempStr = ""
     for(let i=0;i<tempArrayDom.length;i++){
-        tempStr += tempArrayDom[i].textContent + `${i==tempArrayDom.length-1?"":" "}`
+        const otherFrame = JSDOM.fragment(tempArrayDom[i].outerHTML)
+        let thisRow  = ""
+        let ignorePDF = false 
+
+        let otherDomArray  = otherFrame.querySelectorAll("th")    
+        for(let j=0;j<otherDomArray.length;j++){
+            if(otherDomArray[j].textContent.indexOf("PDF")!=-1){
+                ignorePDF= true 
+            }
+            thisRow +=otherDomArray[j].textContent + ": " 
+        }
+        
+        otherDomArray  = otherFrame.querySelectorAll("td")    
+        for(let j=0;j<otherDomArray.length;j++){
+            if(otherDomArray[j].textContent.indexOf("PDF")!=-1){
+                ignorePDF= true 
+            }
+            thisRow +=otherDomArray[j].textContent + " " 
+        }
+
+        if(ignorePDF){
+            continue
+        }
+
+        tempStr += thisRow+" "
+        // console.log("Row: " , thisRow)
     }
     carga_productos.ipEspc     = tempStr
     carga_productos.ipFile     = (frame.querySelector('#image-main').src?frame.querySelector('#image-main').src:"")
@@ -172,8 +197,6 @@ const domlv3 = async (arg)=>{
     // console.log(carga_productos)
     const  value =  await addProduct(carga_productos)
     return value 
-    
-    
 }
 
 const addAll = (req = request , res = response)=>{
