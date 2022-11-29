@@ -11,7 +11,7 @@ const { response , request } = require('express');
 const obtenerFecha  = ()=>{return `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()} - ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds() } `}
 
 const writeError = (arg)=>{
-    fs.appendFileSync('Errors.txt', `\n----------------${obtenerFecha()}---------------------\n ${arg}\n` , (err) => {
+    fs.appendFileSync('public/Errors.txt', `\n----------------${obtenerFecha()}---------------------\n ${arg}\n` , (err) => {
         if (err) console.log("Error al documentar error");
         console.log('Error registrado');
     });
