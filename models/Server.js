@@ -25,8 +25,8 @@ class Server{
             }else{
                 next()
             }
-            
         })
+
         //Directorio Publico
         this.app.use(express.static('public'))
         //Lectura y parseo del body

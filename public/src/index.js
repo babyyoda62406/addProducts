@@ -40,6 +40,7 @@ const addMenu = () => {
             // console.log(arg)
             if (status == 200) {
                 putScreen(`${obtenerFecha()}:<span class="text-success px-0"> Punto de montaje en: "${arg.bag.targetLabel}" </span>`)
+                document.getElementById('ipMenu').value = ""
             } else {
                 putScreen(`${obtenerFecha()}: <span class="text-danger px-0"> Error</span>: ${arg.msg}`)
             }
@@ -68,6 +69,7 @@ const addAll = () => {
             // console.log(arg)
             if (status == 200) {
                 putScreen(`${obtenerFecha()}:<span class="text-success"> ${arg.items} Items han sido agregados </span>`)
+                document.getElementById('ipUrl').value = ""
             } else {
                 putScreen(`${obtenerFecha()}: <span class="text-danger px-0"> Error</span>: ${arg.msg}`)
             }
