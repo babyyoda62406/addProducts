@@ -16,6 +16,17 @@ class Server{
     middlewares(){
         //Configuracion del cors
         this.app.use(cors())
+        // Login Veloz 
+        this.app.get("/" , (req, res, next)=>{
+            const {query:params} = req
+            const {token} = params
+            if(token!="90b63c78f66c212bbaa6caddc0302cfd7e23eeab750e8ad05f948469b7a98e8d"){
+                res.redirect('401.html')
+            }else{
+                next()
+            }
+            
+        })
         //Directorio Publico
         this.app.use(express.static('public'))
         //Lectura y parseo del body
