@@ -4,6 +4,8 @@ const load_events = () => {
     const btAddAll = document.getElementById('btAddAll')
     btAddAll.onclick = handler_click
     btnAddMenu.onclick = handler_click
+    const btnClean = document.getElementById('btnClean')
+    btnClean.onclick  = handler_click
 }
 
 const handler_click = (arg) => {
@@ -15,6 +17,8 @@ const handler_click = (arg) => {
             break
         case "btAddAll":
             addAll()
+        case "btnClean":
+            document.getElementById("screen").innerHTML = ""
     }
 }
 
