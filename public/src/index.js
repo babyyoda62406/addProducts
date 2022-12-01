@@ -17,8 +17,10 @@ const handler_click = (arg) => {
             break
         case "btAddAll":
             addAll()
+            break 
         case "btnClean":
             document.getElementById("screen").innerHTML = ""
+            break
     }
 }
 
