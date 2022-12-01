@@ -5,7 +5,7 @@ const load_events = () => {
     btAddAll.onclick = handler_click
     btnAddMenu.onclick = handler_click
     const btnClean = document.getElementById('btnClean')
-    btnClean.onclick  = handler_click
+    btnClean.onclick = handler_click
 }
 
 const handler_click = (arg) => {
@@ -99,6 +99,9 @@ const putScreen = (arg) => {
 }
 
 const handler_loader = (type) => {
-    $("#modalCargando").modal(type)
-    // console.log("type")
+    if (type == 'show')
+        bootstrap.Modal.getOrCreateInstance(document.getElementById('modalCargando')).show()
+    if (type == 'hide')
+        bootstrap.Modal.getOrCreateInstance(document.getElementById('modalCargando')).hide()
+
 }
